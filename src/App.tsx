@@ -1,7 +1,11 @@
+import Navbar from "./components/layout/Navbar";
+import MainSection from "./components/layout/MainSection";
+
 function App() {
   return (
     <div className="content-grid font-manrope">
-      <h1>Hello</h1>
+      <Navbar />
+      <MainSection />
     </div>
   );
 }

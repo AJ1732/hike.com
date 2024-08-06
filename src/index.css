@@ -32,3 +32,11 @@
 .content-grid > .full-width {
   grid-column: full-width;
 }
+
+button {
+  @apply active:scale-[0.98];
+}
+
+nav li {
+  @apply cursor-pointer transition-all duration-300 first-letter:capitalize hover:text-black;
+}

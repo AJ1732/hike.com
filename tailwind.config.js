@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         manrope: ["Manrope", "sans-serif"],
       },
+      fontSize: {
+        smm: "0.9375rem"
+      },
       colors: {
         blue: "#17316C",
         red: "#D4030B",
