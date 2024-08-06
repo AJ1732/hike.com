@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MenuIcon from "../svg/MenuIcon";
+import MenuIcon from "../icons/MenuIcon";
 import Button from "../ui/Button";
 
 const Navbar = () => {
