@@ -4,6 +4,7 @@ import avatar1 from "../../assets/avatar1.png";
 import avatar2 from "../../assets/avatar2.png";
 import avatar3 from "../../assets/avatar3.png";
 import avatar4 from "../../assets/avatar4.png";
+import { useState, useEffect } from "react";
 
 const avatars = [
   {
@@ -25,10 +26,29 @@ const avatars = [
 ];
 
 const MainSection = () => {
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: window.innerWidth,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowDimensions({
+        width: window.innerWidth,
+      });
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [windowDimensions]);
+
+  console.log(windowDimensions.width);
+
   return (
     <main className="relative size-full pb-16 pt-4">
       {/* MASK */}
-      <div className="clipped-image absolute left-1/2 -translate-x-1/2" />
+      <div
+        style={{ width: windowDimensions.width}}
+        className="clipped-image absolute left-0 right-0"
+      />
 
       <section className="flex min-h-[855px] flex-col justify-between">
         <div className="mx-auto mt-4 flex size-fit flex-col items-center justify-center gap-5 p-5">
