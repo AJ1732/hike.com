@@ -1,10 +1,10 @@
-import Button from "../ui/Button";
+import { useState, useEffect } from "react";
 import LoadingIcon from "../icons/LoadingIcon";
 import avatar1 from "../../assets/avatar1.png";
 import avatar2 from "../../assets/avatar2.png";
 import avatar3 from "../../assets/avatar3.png";
 import avatar4 from "../../assets/avatar4.png";
-import { useState, useEffect } from "react";
+import Button from "../ui/Button";
 
 const avatars = [
   {
@@ -40,18 +40,17 @@ const MainSection = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [windowDimensions]);
 
-  console.log(windowDimensions.width);
-
   return (
     <main className="relative size-full pb-16 pt-4">
       {/* MASK */}
       <div
-        style={{ width: windowDimensions.width}}
+        style={{ width: windowDimensions.width }}
         className="clipped-image absolute left-0 right-0"
       />
 
+      {/* CONTENT */}
       <section className="flex min-h-[855px] flex-col justify-between">
-        <div className="mx-auto mt-4 flex size-fit flex-col items-center justify-center gap-5 p-5">
+        <div className="relative mx-auto mt-2 flex size-fit flex-col items-center justify-center gap-5 p-5">
           <h1 className="from-blue via-red to-orange bg-gradient-to-r from-[6.37%] via-[41.91%] to-[84.33%] bg-clip-text text-5xl font-bold leading-[3.5rem] tracking-[-0.09rem] text-transparent">
             Hike, Explore, Discover
           </h1>
@@ -66,6 +65,11 @@ const MainSection = () => {
             <span>Join our community</span>
             <LoadingIcon />
           </Button>
+
+          {/* ICON */}
+          <img className="absolute -left-20 top-6" src="/svg/binoculars.svg" />
+          <img className="absolute -top-1 -right-16" src="/svg/compass.svg" />
+          <img className="absolute bottom-5 right-10" src="/svg/magnifying-glass.svg" />
         </div>
 
         <div className="w-full">
